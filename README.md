@@ -6,7 +6,7 @@
 ### Instructions
 
 - Clone the the project create the virtual environment with the following command:
-    # NOTE: TO install virtual env we need pip first install pip.
+    #### NOTE: TO install virtual env we need pip first install pip.
         `pip3 install virtualenv`
 
 
