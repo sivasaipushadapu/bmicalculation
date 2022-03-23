@@ -1,4 +1,7 @@
 # Getting started with BMI calculation
+1.Clone the the project create the virtual environment with the following command:
+ NOTE: TO install virtual env we need pip first install pip.
+  pip3 install virtualenv
 
 ### Instructions
 
@@ -20,3 +23,4 @@
         `sudo python3 bmi.py`
 
 - You can check the output in console
+6 You can check the output in console
