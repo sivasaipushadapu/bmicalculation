@@ -23,4 +23,3 @@
         `sudo python3 bmi.py`
 
 - You can check the output in console
-6 You can check the output in console
