@@ -18,49 +18,59 @@ Severely_obese = 39.9
 Very_severely_obese = 40
 
 persons = {
-    "under_weight": 0, 
-    "noremal_weight": 0, 
+    "under_weight": 0,
+    "noremal_weight": 0,
     "over_weight": 0,
     "moderately_obese": 0,
     "severly_obese": 0,
-    "very_serverly_obese": 0
+    "very_serverly_obese": 0,
 }
 json1 = []
 
+
 def bmi_caluculation():
     for i in json:
-        BMI = i["WeightKg"]/(i["HeightCm"]/100)**2
-        
+
+        """
+        Doing bmi calculations with values given in the json
+        converted height cms to meters and calculated the BMI
+        """
+        BMI = i["WeightKg"] / (i["HeightCm"] / 100) ** 2
+
+        """"
+        Checking the all the conditiond with the given BMI range
+        Addin three new columns to the json.depends upon their BMI
+        """
         if BMI <= Under_weight:
             persons["under_weight"] += 1
             i["bmi_category"] = "under_weight"
             i["bmi"] = BMI
             i["health_risk"] = "malnutrition_risk"
-        
-        elif BMI>Under_weight and BMI<=Normal_weight:
+
+        elif BMI > Under_weight and BMI <= Normal_weight:
             persons["noremal_weight"] += 1
             i["bmi_category"] = "normal_weight"
             i["bmi"] = BMI
             i["health_risk"] = "low_risk"
 
-        elif BMI>=Normal_weight and BMI<=Over_weight:
+        elif BMI >= Normal_weight and BMI <= Over_weight:
             persons["over_weight"] += 1
             i["bmi_category"] = "over_weight"
             i["bmi"] = BMI
             i["health_risk"] = "enhanced_risk"
 
-        elif BMI>Over_weight and BMI<=Moderately_obese:
+        elif BMI > Over_weight and BMI <= Moderately_obese:
             persons["moderately_obese"] += 1
             i["bmi_category"] = "moderately_obese"
             i["bmi"] = BMI
             i["health_risk"] = "medium_risk"
-        
-        elif BMI>Moderately_obese and BMI<=Severely_obese:
+
+        elif BMI > Moderately_obese and BMI <= Severely_obese:
             persons["severly_obese"] += 1
             i["bmi_category"] = "severly_obese"
             i["bmi"] = BMI
             i["health_risk"] = "high_risk"
-        
+
         else:
             persons["very_serverly_obese"] += 1
             i["bmi_category"] = "very_severly_obese"
@@ -68,6 +78,11 @@ def bmi_caluculation():
             i["health_risk"] = "very_high_risk"
     print(json)
     return Response(persons)
+
+
+"""
+calling the BMI funtion here to check response and printing the data we can the check output in logs
+"""
 
 result = bmi_caluculation()
 print(result)

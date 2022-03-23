@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from rest_framework.routers import DefaultRouter
-from bmicalculation.bmi.views import BmiViewset
+# from bmicalculation.bmi.views import BmiViewset
 
 router = DefaultRouter()
 
 
-router.register(r"bmi", BmiViewset, basename="Users")
+# router.register(r"bmi", BmiViewset, basename="Users")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
